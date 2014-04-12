@@ -1,0 +1,37 @@
+<div class="col-md-offset-2 col-md-10 account" th:fragment="accountRepresentation(account)" style="margin-top: 20px">
+    <div class="col-md-3">
+        <img src="/image/defPhoto.png" class="img-circle accountPhoto" />
+        <p style="margin-top: 15px">
+            <a href="#"><img src="/image/fb.png" width="60" /></a>
+            <a href="#" style="margin-left: 6px"><img src="/image/twitter.png" /></a>
+            <a href="#" style="margin-left: 6px"><img src="/image/github.png" /></a>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h1>Имя Фамилия</h1>
+        <h2>Компания\Проект</h2>
+        <h3>Должность</h3>
+        <hr />
+        <span class="glyphicon glyphicon-earphone"></span> Tel. 8-555-55-55
+        <br />
+        <span class="glyphicon glyphicon-envelope"></span> <span th:text="${account.email}"></span>
+        <br />
+        <span class="glyphicon glyphicon-globe"></span> www.github.com
+        <br />
+    </div>
+</div>
+
+<!--<div class="col-md-8">
+        <span>Account name: </span>
+        <span th:text="${account.name}"></span>
+    </div>
+    <div>
+        <span>Email: </span>
+        <span th:text="${account.email}"></span>
+    </div>-->
+
+<div th:fragment="accountNotFound">
+    <div>
+        <span>Account not found</span>
+    </div>
+</div>

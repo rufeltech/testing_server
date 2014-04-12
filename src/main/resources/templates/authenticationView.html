@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+	<head th:replace="defaultHeadTmpl :: defaultHead"/>
+	<body>
+		<div th:replace="headerLoggedTmpl :: header" />
+		<div class="container">
+			<div class="row">
+				<div th:replace="authenticationTmpl :: welcomeView"/>
+			</div>
+		</div>
+	</body>
+</html>
