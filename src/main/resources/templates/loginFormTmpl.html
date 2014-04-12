@@ -1,0 +1,23 @@
+<div class="container" th:fragment="loginForm">
+    <form th:action="@{/account/login}" class="form-signin" role="authentication" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <div th:if="${param.error}" class="alert alert-danger">Invalid username/password combination</div>
+        <div th:if="${param.logout}" class="alert alert-info">You have been logged out</div>
+        <label for="username">Username</label>
+        <input id="sername" name="username" type="text" class="form-control" placeholder="Username" required="" autofocus="" />
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" class="form-control" placeholder="Password" required="" />
+        <label class="checkbox">
+            <input type="checkbox" value="remember-me" /> 
+            <span>Remember me</span>
+        </label>
+        <input th:name="${_csrf.parameterName}" type="hidden" th:value="${_csrf.token}" />
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+        <div>
+            <a th:href="@{/account/create}">Don't have an account?</a>
+        </div>
+        <div>
+            <a th:href="@{/account/remind}">Forgot your password?</a>
+        </div>
+    </form>
+</div>

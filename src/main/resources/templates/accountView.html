@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head th:replace="defaultHeadTmpl :: defaultHead"/>
+	<body>
+		<div th:replace="headerLoggedTmpl :: header" />
+		<div class="container">
+			<div th:if="${account ne null}"
+				 th:replace="accountRepresentationTmpl :: accountRepresentation( ${account} )" />
+			<div th:if="${account eq null}"
+			     th:include="accountRepresentationTmpl :: accountNotFound" />
+		</div>
+	</body>
+</html>

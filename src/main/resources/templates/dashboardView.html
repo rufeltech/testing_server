@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head th:replace="defaultHeadTmpl :: defaultHead"/>
+	<body>
+		<div th:replace="headerLoggedTmpl :: header" />
+		<div style="clear:both"></div>
+		<div class="container">
+			<div class="row">
+				<div th:replace="featuredProjectsTmpl :: projects" />
+				<div th:replace="latestIssuesTmpl :: issues" />
+				<div th:replace="newsFeedTmpl :: news" />
+			</div>
+		</div>
+	</body>
+</html>
