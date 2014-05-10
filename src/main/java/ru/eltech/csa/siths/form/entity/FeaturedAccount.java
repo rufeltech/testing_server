@@ -1,10 +1,13 @@
 package ru.eltech.csa.siths.form.entity;
 
+import java.lang.reflect.Method;
+
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.ScriptAssert;
+import org.junit.Test;
 
 public class FeaturedAccount {
 
@@ -14,7 +17,7 @@ public class FeaturedAccount {
 
     @NotEmpty(message = "Email field should not be empty")
     @Email(message="Email address shold be valid")
-    private String email;
+    public String email;
 
     @NotEmpty(message = "Password field should not be empty")
     @Size(min = 6, max = 32, message = "Password should be between {min} and {max} characters long")
@@ -22,7 +25,7 @@ public class FeaturedAccount {
 
     @NotEmpty(message = "Password confirmation field should not be empty")
     @Size(min = 6, max = 32, message = "Password confirmation should be between {min} and {max} characters long")
-    private String passwordConfirmation;
+    public String passwordConfirmation;
 
     public FeaturedAccount(String name, String email, String password, String passwordConfirmation) {
         this.name = name;
@@ -30,7 +33,7 @@ public class FeaturedAccount {
         this.password = password;
         this.passwordConfirmation = passwordConfirmation;
     }
-
+  
     public FeaturedAccount() {
 
     }
